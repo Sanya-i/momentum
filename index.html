@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="assets/favicon.ico" rel="shortcut icon" />
+  <link rel="stylesheet" href="css/owfont-regular.css" />
+  <link rel="stylesheet" href="css/style.css" />
+  <script src="script.js" defer></script>
+  <title>momentum</title>
+</head>
+
+<body>
+  <header class="header">
+    <div class="player">
+      <div class="player-controls">
+        <button class="play-prev player-icon"></button>
+        <button class="play player-icon"></button>
+        <button class="play-next player-icon"></button>
+        <button class="mute player-icon"></button>
+      </div>
+      <div class="timeline-container">
+        <div class="audio-time">
+          <div class="curr-time">0:00</div>
+          <div class="cherta">/</div>
+          <div class="total-time">0:00</div>
+        </div>
+        <div class="name-track"></div>
+        <input type="range" min="1" max="100" class="seek-bar" onchange="changeProgressBar()">
+        <div class="volume-container">
+          <div class="volume-down player-icon"></div>
+          <input type="range" min="1" max="100" value="100" class="volume-bar" onchange="changeProgressVolumeBar()">
+          <div class="volume-up player-icon"></div>
+        </div>
+      </div>
+      <div class="play-list-wrapp">
+        <div class="play-list-btn"></div>
+        <ul class="play-list"></ul>
+      </div>
+    </div>
+      <div class="todo-container">
+
+        <div class="todo-title">ToDo list</div>
+        <div class="todo-subtitle">список задач на сегодня</div>
+    
+        <!-- List of tasks -->
+        <div class="card mb-4">
+          <ul id="tasksList" class="list-group list-group-flush">
+    
+            <li id="emptyList" class="list-group-item empty-list">
+              <img src="./assets/svg/leaf.svg" alt="Empty" width="48" class="mt-3">
+              <div class="empty-list__title">Список дел пуст</div>
+            </li>
+    
+           
+          </ul>
+        </div>
+       
+        <div class="card bg-light" >
+          <div class="card-header">Добавить новую задачу</div>
+          <div class="card-body">
+            <form id="form">
+              <div class="form-group">
+                <input type="text" class="form-control" id="taskInput" placeholder="Текст задачи" required>
+              </div>
+              <button type="submit" class="btn btn-primary  btn-lg active">Добавить</button>
+            </form>
+          </div>
+        </div>
+     
+      </div>
+    
+    
+    <div class="weather">
+      <input type="text" class="city" />
+      <i class="weather-icon owf"></i>
+      <div class="weather-error"></div>
+      <div class="description-container">
+        <span class="temperature"></span>
+        <span class="weather-description"></span>
+      </div>
+      <div class="wind"></div>
+      <div class="humidity"></div>
+    </div>
+  </header>
+  <main class="main">
+    <div class="slider-icons">
+      <button class="slide-prev slider-icon"></button>
+      <button class="slide-next slider-icon"></button>
+    </div>
+    <time class="time"></time>
+    <date class="date"></date>
+    <div class="greeting-container">
+      <span class="greeting"></span>
+      <input type="text" class="name" placeholder="Enter name" />
+    </div>
+  </main>
+  <footer class="footer">
+    <button class="change-quote"></button>
+    <div>
+      <div class="quote"></div>
+      <div class="author"></div>
+    </div>
+  </footer>
+  <script src="playList.js"></script>
+  <script type="module" src="index.js"></script>
+</body>
+
+</html>
